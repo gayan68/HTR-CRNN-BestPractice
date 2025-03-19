@@ -1,15 +1,15 @@
 resume:
 save: './temp.pt'
 
-device: 'cuda:1'
+device: 'cuda:0'
 
-model_save_dir: './results/saved_models_800_191'
+model_save_dir: '../../logs/HTR-CRNN-BestPractice/results/saved_models_800_191'
 
 # datasets
 data:
-  clean_path: '../DATASETS/IAM/processed_words'
-  strike_path: '../DATASETS/IAM/striked_v3'
-  path: '../DATASETS/IAM/striked_v3'
+  clean_path: '../../DATASETS/IAM/processed_words'
+  strike_path: '../../DATASETS/IAM/striked_v3'
+  path: '../../DATASETS/IAM/striked_v3'
   dataset: 'x' 
   
 
