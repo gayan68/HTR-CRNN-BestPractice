@@ -339,7 +339,7 @@ if __name__ == '__main__':
     max_epochs = config.train.num_epochs
 
 
-    wandb_log = True  #Set wandb web log
+    wandb_log = False  #Set wandb web log
 
     # ----------------------- initialize wandb ------------------------------- #
     if wandb_log:
