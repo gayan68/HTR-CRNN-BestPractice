@@ -1,0 +1,70 @@
+resume:
+save: './temp.pt'
+
+device: 'cuda:4'
+
+model_save_dir: './results/saved_models_800_163'
+
+# datasets
+data:
+  clean_path: '../DATASETS/IAM/processed_words'
+  strike_path: '../DATASETS/IAM/striked_v3'
+  path: '../DATASETS/IAM/striked_v3'
+  dataset: 'MIXED' 
+  
+
+# preprocessing
+preproc:
+  image_height: 64 #128
+  image_width: 256 #1024
+
+# architecture
+arch: 
+  cnn_cfg: [[2, 64], 'M', [4, 128], 'M', [4, 256]]
+  head_type: 'both'  # select from 'both' (rnn + cnn shortcut), 'rnn', 'cnn'
+  rnn_type: 'lstm'
+  rnn_layers: 3
+  rnn_hidden_size: 256
+  flattening: 'maxpool'
+  stn: False
+
+# training
+train:
+  lr: 5e-4
+  num_epochs: 800
+  batch_size: 100
+  scheduler: 'mstep'  # right now only 'mstep' is supported, i.e. multistep
+  save_every_k_epochs: 50
+  num_workers: 8
+  aug_prob: 0.5
+
+# evaluation
+eval:
+  batch_size: 100
+  num_workers: 8
+  wer_mode: 'tokenizer' # select from 'tokenizer', 'space'
+
+preprocess:
+  mode: 'constant' # median | constant
+  values: 'median'   # median | zero
+  ignore_1_chr: False
+  ignore_chars: ['#']
+
+#probability of clean Vs striked and different striked types
+probability:
+  clean: 1.0
+  strike: 1.0
+  # Probabilities must sum to 1
+  striked_types: {
+    "CLEAN": 0.0,
+    "MIXED": 0.0,
+    "CLEANED_CLEAN": 0.0,
+    "CLEANED_MIXED": 0.0, 
+    "SINGLE_LINE": 0.0,
+    "DOUBLE_LINE": 0.0,
+    "DIAGONAL": 0.0, 
+    "CROSS": 0.0,
+    "WAVE": 1.0, 
+    "ZIG_ZAG": 0.0, 
+    "SCRATCH": 0.0,
+    }
