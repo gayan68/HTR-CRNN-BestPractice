@@ -1,6 +1,6 @@
 import torch
 
-device = 'cuda'  # Get the device from config
+device = 'cuda:0'  # Get the device from config
 
 if torch.cuda.is_available():
     print(f"CUDA Available: {device}")
