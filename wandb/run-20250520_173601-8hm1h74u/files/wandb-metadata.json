@@ -1,0 +1,31 @@
+{
+  "os":  "Windows-10-10.0.19045-SP0",
+  "python":  "CPython 3.9.21",
+  "startedAt":  "2025-05-20T15:36:01.762838Z",
+  "program":  "C:\\Users\\gaypat\\OneDrive - Luleå University of Technology\\PhD\\PROJECTS\\HTR-CRNN-BestPractice\\trainer1_word.py",
+  "codePath":  "trainer1_word.py",
+  "git":  {
+    "remote":  "https://github.com/gayan68/HTR-CRNN-BestPractice.git",
+    "commit":  "78fd434bc00076c898adc308f6d93e7b30f95e29"
+  },
+  "email":  "gayan68@yahoo.com",
+  "root":  "C:\\Users\\gaypat\\OneDrive - Luleå University of Technology\\PhD\\PROJECTS\\HTR-CRNN-BestPractice",
+  "host":  "C1289",
+  "executable":  "C:\\Users\\gaypat\\AppData\\Local\\anaconda3\\envs\\PyTorch_201\\python.exe",
+  "codePathLocal":  "trainer1_word.py",
+  "cpu_count":  12,
+  "cpu_count_logical":  14,
+  "disk":  {
+    "/":  {
+      "total":  "1013310287872",
+      "used":  "268413771776"
+    }
+  },
+  "memory":  {
+    "total":  "68192501760"
+  },
+  "cpu":  {
+    "count":  12,
+    "countLogical":  14
+  }
+}

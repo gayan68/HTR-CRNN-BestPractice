@@ -1,0 +1,21 @@
+run name WANDB : dutiful-deluge-300
+Traceback (most recent call last):
+  File "C:\Users\gaypat\OneDrive - Luleå University of Technology\PhD\PROJECTS\HTR-CRNN-BestPractice\trainer1_word.py", line 363, in <module>
+    htr_trainer = HTRTrainer(config)
+  File "C:\Users\gaypat\OneDrive - Luleå University of Technology\PhD\PROJECTS\HTR-CRNN-BestPractice\trainer1_word.py", line 30, in __init__
+    self.prepare_dataloaders()
+  File "C:\Users\gaypat\OneDrive - Luleå University of Technology\PhD\PROJECTS\HTR-CRNN-BestPractice\trainer1_word.py", line 46, in prepare_dataloaders
+    train_set = HTRDatasetBoth(config, 'train', fixed_size=fixed_size, transforms=aug_transforms(config.train.aug_prob))
+  File "C:\Users\gaypat\OneDrive - Luleå University of Technology\PhD\PROJECTS\HTR-CRNN-BestPractice\utils\htr_dataset1.py", line 35, in __init__
+    with open(os.path.join(self.basefolder_clean, subset, 'gt.txt'), 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '../DATASETS/IAM/processed_words\\train\\gt.txt'
+Traceback (most recent call last):
+  File "C:\Users\gaypat\OneDrive - Luleå University of Technology\PhD\PROJECTS\HTR-CRNN-BestPractice\trainer1_word.py", line 363, in <module>
+    htr_trainer = HTRTrainer(config)
+  File "C:\Users\gaypat\OneDrive - Luleå University of Technology\PhD\PROJECTS\HTR-CRNN-BestPractice\trainer1_word.py", line 30, in __init__
+    self.prepare_dataloaders()
+  File "C:\Users\gaypat\OneDrive - Luleå University of Technology\PhD\PROJECTS\HTR-CRNN-BestPractice\trainer1_word.py", line 46, in prepare_dataloaders
+    train_set = HTRDatasetBoth(config, 'train', fixed_size=fixed_size, transforms=aug_transforms(config.train.aug_prob))
+  File "C:\Users\gaypat\OneDrive - Luleå University of Technology\PhD\PROJECTS\HTR-CRNN-BestPractice\utils\htr_dataset1.py", line 35, in __init__
+    with open(os.path.join(self.basefolder_clean, subset, 'gt.txt'), 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '../DATASETS/IAM/processed_words\\train\\gt.txt'

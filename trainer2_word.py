@@ -323,7 +323,10 @@ def parse_args():
 
     OmegaConf.set_struct(conf, True)
 
-    sys.argv = [sys.argv[0]] + sys.argv[2:] # Remove the configuration file name from sys.argv
+    # sys.argv = [sys.argv[0]] + sys.argv[2:] # Remove the configuration file name from sys.argv
+    conf.experiment_id = sys.argv[2]
+    conf.log_path = sys.argv[3]
+    conf.model_save_dir = conf.log_path
 
     conf.merge_with_cli()
     return conf
@@ -337,8 +340,11 @@ if __name__ == '__main__':
     config = parse_args()
     max_epochs = config.train.num_epochs
 
+    print(config.experiment_id)
+    print(config.log_path)
 
-    wandb_log = True  #Set wandb web log
+
+    wandb_log = False  #Set wandb web log
 
     # ----------------------- initialize wandb ------------------------------- #
     if wandb_log:

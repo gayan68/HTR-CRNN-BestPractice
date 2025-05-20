@@ -1,0 +1,15 @@
+{"time":"2025-05-20T17:36:01.7680077+02:00","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"C:\\Users\\gaypat\\OneDrive - Luleå University of Technology\\PhD\\PROJECTS\\HTR-CRNN-BestPractice\\wandb\\run-20250520_173601-8hm1h74u\\logs\\debug-core.log"}
+{"time":"2025-05-20T17:36:01.8853858+02:00","level":"INFO","msg":"created new stream","id":"8hm1h74u"}
+{"time":"2025-05-20T17:36:01.8863859+02:00","level":"INFO","msg":"stream: started","id":"8hm1h74u"}
+{"time":"2025-05-20T17:36:01.8863859+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"8hm1h74u"}
+{"time":"2025-05-20T17:36:01.8863859+02:00","level":"INFO","msg":"sender: started","stream_id":"8hm1h74u"}
+{"time":"2025-05-20T17:36:01.8863859+02:00","level":"INFO","msg":"handler: started","stream_id":"8hm1h74u"}
+{"time":"2025-05-20T17:36:02.3767151+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-05-20T17:36:04.7807988+02:00","level":"INFO","msg":"stream: closing","id":"8hm1h74u"}
+{"time":"2025-05-20T17:36:04.7813243+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-05-20T17:36:04.7820332+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-05-20T17:36:05.885624+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-05-20T17:36:06.194694+02:00","level":"INFO","msg":"handler: closed","stream_id":"8hm1h74u"}
+{"time":"2025-05-20T17:36:06.194694+02:00","level":"INFO","msg":"sender: closed","stream_id":"8hm1h74u"}
+{"time":"2025-05-20T17:36:06.194694+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":"8hm1h74u"}
+{"time":"2025-05-20T17:36:06.1952321+02:00","level":"INFO","msg":"stream: closed","id":"8hm1h74u"}
