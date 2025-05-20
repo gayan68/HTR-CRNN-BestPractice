@@ -9,7 +9,7 @@
 #SBATCH --mem=40G
 
 #Experiment ID
-EXPERIMENT_ID= "207"
+EXPERIMENT_ID="207"
 
 # mamba init bash
 module load Mambaforge/23.3.1-1-hpc1-bdist
