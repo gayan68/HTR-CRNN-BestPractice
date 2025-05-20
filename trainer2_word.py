@@ -328,7 +328,7 @@ def parse_args():
     conf.log_path = sys.argv[3]
     conf.model_save_dir = conf.log_path
 
-    conf.merge_with_cli()
+    # conf.merge_with_cli()
     return conf
 
 def mylog(config, log_message):
