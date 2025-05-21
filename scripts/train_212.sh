@@ -5,7 +5,7 @@
 #SBATCH -n 1
 #SBATCH -G 1
 #SBATCH -c 4                           # one CPU core
-#SBATCH -t 2-00:00:00
+#SBATCH -t 1-12:00:00
 #SBATCH --mem=40G
 
 #Experiment ID
