@@ -1,3 +1,9 @@
+# HTR-CRNN-BestPractice
+
+**HTR-CRNN-BestPractice** is a word-level Handwritten Text Recognition (HTR) model that combines a **Convolutional Recurrent Neural Network (CRNN)** with **Bi-directional LSTM (Bi-LSTM)** layers.  
+It is designed to extract features from handwritten word images and capture sequential dependencies for accurate word recognition, following best practices for preprocessing, augmentation, and training.
+
+
 ## Acknowledgment
 
 The original work was introduced in the paper:  
