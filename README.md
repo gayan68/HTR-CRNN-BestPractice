@@ -1,7 +1,14 @@
-The original work is intrduced by the the paper ["Best Practices for a Handwritten Text Recognition system"](https://arxiv.org/abs/2404.11339)
-Original code based was copied from GitHub: https://github.com/georgeretsi/HTR-best-practices
+## Acknowledgment
 
-## My Usage and Contribution
-This code was used to see the impact of cross-out words in Handwritten Text recognition (HTR).
-I mainly modified the data loaders in the code to pick samples based on probabilities. Also, not all hyper parameters were mentioned in the original code for word level recognition. Therefore, some of the hyper parameters were chosen by a grid seach.
+The original work was introduced in the paper:  
+["Best Practices for a Handwritten Text Recognition System"](https://arxiv.org/abs/2404.11339).  
 
+The original codebase is available at:  
+[georgeretsi/HTR-best-practices](https://github.com/georgeretsi/HTR-best-practices).  
+
+## Our Usage and Contribution
+
+This repository adapts the original work to study the impact of **cross-out words** in Handwritten Text Recognition (HTR).  
+
+- Modified the data loaders to select samples based on probabilities.  
+- Performed hyperparameter tuning (grid search) for word-level recognition, since not all parameters were provided in the original implementation.  
