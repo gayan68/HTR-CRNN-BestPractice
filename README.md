@@ -35,6 +35,7 @@ probability:
     "WAVE": 0.0, 
     "ZIG_ZAG": 0.0, 
     "SCRATCH": 0.0,
+  }
 ```
 
 This configuration means the data loader will pick 50% of the samples from the CLEAN folder and 50% from the SINGLE_LINE folder.
@@ -66,6 +67,7 @@ probability:
     "WAVE": 0.1428, 
     "ZIG_ZAG": 0.1428, 
     "SCRATCH": 0.1428,
+  }
 ```
 This configuration means that the dataloader selects random striked samples based on the defined probabilities.
 
@@ -87,6 +89,7 @@ probability:
     "WAVE": 0.1428, 
     "ZIG_ZAG": 0.1428, 
     "SCRATCH": 0.1428,
+  }
 ```
 This configuration means that the dataloader picks 50% clean samples from the 'clean_path', and the rest are randomly selected striked samples based on the defined probabilities.
 

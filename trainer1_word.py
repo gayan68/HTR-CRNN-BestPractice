@@ -97,23 +97,11 @@ class HTRTrainer(nn.Module):
         classes = self.classes['classes']
 
         net = HTRNet(config.arch, len(classes) + 1)
-        
-        #print(net.state_dict().keys())
-        #print("########################################################")
+
         if config.resume is not None:
             print('resuming from checkpoint: {}'.format(config.resume))
             load_dict = torch.load(config.resume)
             
-            #### Added by Gayan - Different Achi - Pretrain ###
-            """
-            keys_to_remove = ["top.cnn.1.weight", "top.cnn.1.bias"]
-            for key in keys_to_remove:
-                if key in load_dict:  # Check to avoid KeyError
-                    del load_dict[key]
-            """
-            ####################################################
-            #print(load_disct.keys())
-
             load_status = net.load_state_dict(load_dict, strict=True)
             print(load_status)
         net.to(device)
@@ -246,11 +234,7 @@ class HTRTrainer(nn.Module):
             label_lens = torch.IntTensor([len(t) for t in transcr])
 
             loss_val = self.ctc_loss(output.cpu(), labels, act_lens, label_lens)
-            # GAYAN: I don't thin we need CTC shortcut loss for the validation
-            """
-            if config.arch.head_type == "both":
-                loss_val += 0.1 * self.ctc_loss(aux_output.cpu(), labels, act_lens, label_lens)
-            """
+
             epoch_loss += loss_val.item()
 
             t.set_postfix(values='val_loss : {:.2f}'.format(loss_val.item()))

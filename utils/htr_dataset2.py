@@ -31,8 +31,7 @@ class HTRDatasetBoth(Dataset):
         with open(os.path.join(self.basefolder, subset, 'images', self.dataset, 'gt.txt'), 'r') as f:
             for line in f:
                 img_id, transcr = line.strip().split(' ')[0], ' '.join(line.strip().split(' ')[1:])
-
-                ######### GAYAN #############
+                
                 transcr = transcr.replace(" ", "")
                 # "We 'll" -> "We'll"
                 special_cases  = ["s", "d", "ll", "m", "ve", "t", "re"]
@@ -41,7 +40,7 @@ class HTRDatasetBoth(Dataset):
                     transcr = transcr.replace("|\'" + cc, "\'" + cc)
                     transcr = transcr.replace("|\'" + cc.upper(), "\'" + cc.upper())
                 transcr = transcr.replace("|", " ")
-                ######### GAYAN End #########
+
                 if (config.preprocess.ignore_1_chr == False) or (len(transcr)>1):
                     if (len(config.preprocess.ignore_chars) == 0) or (transcr not in config.preprocess.ignore_chars):
                         img_path = os.path.join(self.basefolder, subset, "images", self.dataset , img_id + '.png')

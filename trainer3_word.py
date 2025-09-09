@@ -97,23 +97,12 @@ class HTRTrainer(nn.Module):
         classes = self.classes['classes']
 
         net = HTRNet(config.arch, len(classes) + 1)
-        
-        #print(net.state_dict().keys())
+
         #print("########################################################")
         if config.resume is not None:
             print('resuming from checkpoint: {}'.format(config.resume))
             load_dict = torch.load(config.resume)
             
-            #### Added by Gayan - Different Achi - Pretrain ###
-            """
-            keys_to_remove = ["top.cnn.1.weight", "top.cnn.1.bias"]
-            for key in keys_to_remove:
-                if key in load_dict:  # Check to avoid KeyError
-                    del load_dict[key]
-            """
-            ####################################################
-            #print(load_disct.keys())
-
             load_status = net.load_state_dict(load_dict, strict=True)
             print(load_status)
         net.to(device)
