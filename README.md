@@ -99,6 +99,14 @@ data:
   clean_path: '../DATASETS/IAM/processed_words'
 ```
 
+
+## How to initiate a training
+The training should be executed as the training followed by the config.
+
+Example:
+```
+python trainer3_word.py configs/config_800_188.yml
+```
 ## Our Usage and Contribution
 
 This repository adapts the original work to study the impact of **cross-out words** in Handwritten Text Recognition (HTR).  
