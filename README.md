@@ -100,7 +100,7 @@ data:
 ```
 
 
-## How to initiate a training
+## How to Train
 The training should be executed as the training followed by the config.
 
 Example:
