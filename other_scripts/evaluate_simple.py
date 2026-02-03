@@ -305,81 +305,86 @@ experiment_trining = {
 main_cer = []
 main_wer = []
 
-#df = pd.DataFrame(columns= ["Trained_on", "Score", "Model_ID"] + df_splits)
-df = pd.read_csv('results_types_all_cross.csv')
 
-for case in experiment_trining:
-    saved_directory = f"results/saved_models_800_{case}"
-    print(f"Trained Model: {case}")
+saved_directory = f"../../HTR-best-practices-strike2/results/saved_models_800_207_1"
+results_test = test_all_models(saved_models, 'test')
+print(results_test)
 
-    row_cer = {"Trained_on": experiment_trining[case], "Score": "CER", "Model_ID": case}
-    row_wer = {"Trained_on": experiment_trining[case], "Score": "WER", "Model_ID": case}
-    p=0 #CER: p=0 | WER: p=1
+# #df = pd.DataFrame(columns= ["Trained_on", "Score", "Model_ID"] + df_splits)
+# df = pd.read_csv('results_types_all_cross.csv')
 
-    for idx, split in enumerate(df_splits):
-        test_dataset = split
-        if split == "CLEAN":
-            config_probability2_clean = 0.0
-            config_probability2_striked_types = {"CLEAN": 1.0}
+# for case in experiment_trining:
+#     saved_directory = f"results/saved_models_800_{case}"
+#     print(f"Trained Model: {case}")
+
+#     row_cer = {"Trained_on": experiment_trining[case], "Score": "CER", "Model_ID": case}
+#     row_wer = {"Trained_on": experiment_trining[case], "Score": "WER", "Model_ID": case}
+#     p=0 #CER: p=0 | WER: p=1
+
+#     for idx, split in enumerate(df_splits):
+#         test_dataset = split
+#         if split == "CLEAN":
+#             config_probability2_clean = 0.0
+#             config_probability2_striked_types = {"CLEAN": 1.0}
         
-        if split == "MIXED": #This need to be run on te fixed Mixed set by dataloader2.py which is the "evaluate_table_strike_removed.py"
-            config_probability2_clean = 0.0
-            config_probability2_striked_types = {"MIXED": 1.0}
+#         if split == "MIXED": #This need to be run on te fixed Mixed set by dataloader2.py which is the "evaluate_table_strike_removed.py"
+#             config_probability2_clean = 0.0
+#             config_probability2_striked_types = {"MIXED": 1.0}
 
-        if split == "MIXED_2": 
-            config_probability2_clean = 0.0
-            config_probability2_striked_types = {"MIXED_2": 1.0}        
+#         if split == "MIXED_2": 
+#             config_probability2_clean = 0.0
+#             config_probability2_striked_types = {"MIXED_2": 1.0}        
             
-        if split == "MIXED_3": 
-            config_probability2_clean = 0.0
-            config_probability2_striked_types = {"MIXED_3": 1.0}
+#         if split == "MIXED_3": 
+#             config_probability2_clean = 0.0
+#             config_probability2_striked_types = {"MIXED_3": 1.0}
 
-        if split == "SINGLE_LINE":
-            config_probability2_clean = 0.0
-            config_probability2_striked_types = {"SINGLE_LINE": 1.0}
+#         if split == "SINGLE_LINE":
+#             config_probability2_clean = 0.0
+#             config_probability2_striked_types = {"SINGLE_LINE": 1.0}
         
-        if split == "DOUBLE_LINE":
-            config_probability2_clean = 0.0
-            config_probability2_striked_types = {"DOUBLE_LINE": 1.0}        
+#         if split == "DOUBLE_LINE":
+#             config_probability2_clean = 0.0
+#             config_probability2_striked_types = {"DOUBLE_LINE": 1.0}        
         
-        if split == "DIAGONAL":
-            config_probability2_clean = 0.0
-            config_probability2_striked_types = {"DIAGONAL": 1.0}
+#         if split == "DIAGONAL":
+#             config_probability2_clean = 0.0
+#             config_probability2_striked_types = {"DIAGONAL": 1.0}
 
-        if split == "CROSS":
-            config_probability2_clean = 0.0
-            config_probability2_striked_types = {"CROSS": 1.0}
+#         if split == "CROSS":
+#             config_probability2_clean = 0.0
+#             config_probability2_striked_types = {"CROSS": 1.0}
         
-        if split == "WAVE":
-            config_probability2_clean = 0.0
-            config_probability2_striked_types = {"WAVE": 1.0}
+#         if split == "WAVE":
+#             config_probability2_clean = 0.0
+#             config_probability2_striked_types = {"WAVE": 1.0}
         
-        if split == "ZIG_ZAG":
-            config_probability2_clean = 0.0
-            config_probability2_striked_types = {"ZIG_ZAG": 1.0}
+#         if split == "ZIG_ZAG":
+#             config_probability2_clean = 0.0
+#             config_probability2_striked_types = {"ZIG_ZAG": 1.0}
         
-        if split == "SCRATCH":
-            config_probability2_clean = 0.0
-            config_probability2_striked_types = {"SCRATCH": 1.0}    
+#         if split == "SCRATCH":
+#             config_probability2_clean = 0.0
+#             config_probability2_striked_types = {"SCRATCH": 1.0}    
         
 
 
 
-        # config = parse_args(f"configs/config_800_{case}.yml")
-        config = parse_args(f"configs/config_800_207.yml")
+#         # config = parse_args(f"configs/config_800_{case}.yml")
+#         config = parse_args(f"configs/config_800_207.yml")
 
-        print(split)
-        print(config.probability.clean)
-        print(config.probability.striked_types)
+#         print(split)
+#         print(config.probability.clean)
+#         print(config.probability.striked_types)
 
-        results_test = test_all_models(saved_models, 'test')
-        print(results_test)
+#         results_test = test_all_models(saved_models, 'test')
+#         print(results_test)
 
-        row_cer[split] = results_test[0]
-        row_wer[split] = results_test[1]
+#         row_cer[split] = results_test[0]
+#         row_wer[split] = results_test[1]
 
-    df.loc[len(df)] = row_cer
-    df.loc[len(df)] = row_wer
+#     df.loc[len(df)] = row_cer
+#     df.loc[len(df)] = row_wer
 
 
-df.to_csv('results_types_all_cross.csv', index=False)
+# df.to_csv('results_types_all_cross.csv', index=False)
