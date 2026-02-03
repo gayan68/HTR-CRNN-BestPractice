@@ -10,7 +10,7 @@ import numpy as np
 import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader
-from utils.htr_dataset_both3 import HTRDatasetBoth
+from utils.htr_dataset2 import HTRDatasetBoth
 import pandas as pd
 
 from models import HTRNet
