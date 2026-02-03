@@ -310,6 +310,7 @@ saved_directory = f"../../HTR-best-practices-strike2/results/saved_models_800_20
 
 config_probability2_clean = 0.0
 config_probability2_striked_types = {"SINGLE_LINE": 1.0}
+test_dataset = "SINGLE_LINE"
 
 results_test = test_all_models(saved_models, 'test')
 
