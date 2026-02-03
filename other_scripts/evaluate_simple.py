@@ -305,7 +305,7 @@ experiment_trining = {
 main_cer = []
 main_wer = []
 
-
+config = parse_args(f"configs/config_800_207.yml")
 saved_directory = f"../../HTR-best-practices-strike2/results/saved_models_800_207_1"
 results_test = test_all_models(saved_models, 'test')
 print(results_test)
