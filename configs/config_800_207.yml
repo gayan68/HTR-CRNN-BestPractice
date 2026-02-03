@@ -9,9 +9,9 @@ model_save_dir: ''
 
 # datasets
 data:
-  clean_path: '/home/x_gapat/PROJECTS/DATASETS/IAM/processed_words'
-  strike_path: '/home/x_gapat/PROJECTS/DATASETS/IAM/striked_v3'
-  path: '/home/x_gapat/PROJECTS/DATASETS/IAM/striked_v3'
+  clean_path: '../../DATASETS/IAM/processed_words'
+  strike_path: '../../DATASETS/IAM/striked_v3'
+  path: '../../DATASETS/IAM/striked_v3'
   dataset: 'SINGLE_LINE' 
   
 
