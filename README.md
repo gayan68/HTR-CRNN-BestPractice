@@ -107,6 +107,17 @@ Example:
 ```
 python trainer3_word.py configs/config_800_188.yml
 ```
+
+## How to Evaluate
+The training should be executed as the training followed by the config.
+
+Example:
+```
+python -m other_scripts.evaluate_simple
+```
+
+
+
 ## Our Usage and Contribution
 
 This repository adapts the original work to study the impact of **cross-out words** in Handwritten Text Recognition (HTR).  
