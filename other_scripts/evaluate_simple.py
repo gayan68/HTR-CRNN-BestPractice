@@ -307,7 +307,12 @@ main_wer = []
 
 config = parse_args(f"configs/config_800_207.yml")
 saved_directory = f"../../HTR-best-practices-strike2/results/saved_models_800_207_1"
+
+config_probability2_clean = 0.0
+config_probability2_striked_types = {"SINGLE_LINE": 1.0}
+
 results_test = test_all_models(saved_models, 'test')
+
 print(results_test)
 
 # #df = pd.DataFrame(columns= ["Trained_on", "Score", "Model_ID"] + df_splits)
